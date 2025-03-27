@@ -1,0 +1,28 @@
+#include <graphics.h>
+#include <conio.h>
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, NULL); 
+    float x, y;
+
+    printf("Enter x and y coordinates: ");
+    scanf("%f %f", &x, &y); 
+
+    int x_scan = floor(x); 
+    int y_scan =floor(y);
+
+    setbkcolor(BLACK);
+    cleardevice(); 
+
+    setcolor(RED);
+    fillellipse(x_scan, y_scan, 15, 15); 
+
+    printf("Scan converted point: (%d, %d)\n", x_scan, y_scan);
+
+    getch(); 
+    closegraph(); 
+    return 0;
+}
